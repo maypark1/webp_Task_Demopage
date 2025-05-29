@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Ocean - Artist Portfolio</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #141414;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header-container {
+            position: relative;
+            width: 100%;
+            height: 116px;
+            background-color: #141414;
+            border: 1px solid #9747ff;
+            border-radius: 5px;
+            margin-left: -20px;
+            width: calc(100% + 40px);
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+            height: 116px;
+            background-color: #141414;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 54px 0 74px;
+            margin-left: 20px;
+        }
+
+        .logo {
+            font-size: 64px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 78px;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 20px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            line-height: 25px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #9747ff;
+        }
+
+        .nav-icon {
+            width: 14px;
+            height: 390px;
+            margin-left: 20px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 841px;
+            background-image: url('../assets/images/img_subtract.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-top: 116px;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 50px 10px;
+            background-color: #ffffff;
+        }
+
+        .main-heading {
+            font-size: 150px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            line-height: 182px;
+            color: #141414;
+            text-align: left;
+            margin-bottom: 50px;
+            max-width: 1391px;
+        }
+
+        /* Product Section */
+        .product-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 0;
+            position: relative;
+        }
+
+        .product-navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 234px;
+            pointer-events: none;
+        }
+
+        .nav-arrow {
+            width: 27px;
+            height: 27px;
+            cursor: pointer;
+            pointer-events: all;
+            transition: transform 0.3s ease;
+        }
+
+        .nav-arrow:hover {
+            transform: scale(1.1);
+        }
+
+        .product-image {
+            width: 324px;
+            height: 331px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin-bottom: 25px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            line-height: 30px;
+            color: #000000;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .product-description {
+            font-size: 20px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            line-height: 30px;
+            color: #828282;
+            text-align: center;
+            max-width: 324px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #ffffff;
+            padding: 50px 0;
+            border-top: 1px solid #e6e6e6;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 80px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-topics {
+            display: flex;
+            gap: 219px;
+        }
+
+        .topic-column {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+
+        .topic-header {
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            line-height: 20px;
+            color: #000000;
+            margin-bottom: 24px;
+        }
+
+        .topic-link {
+            font-size: 16px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            line-height: 20px;
+            color: #444444;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .topic-link:hover {
+            color: #000000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+                gap: 20px;
+            }
+
+            .logo {
+                font-size: 32px;
+                line-height: 40px;
+            }
+
+            .nav-menu {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-link {
+                font-size: 16px;
+            }
+
+            .main-heading {
+                font-size: 60px;
+                line-height: 70px;
+            }
+
+            .product-navigation {
+                padding: 0 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 40px;
+                padding: 0 20px;
+            }
+
+            .footer-topics {
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-heading {
+                font-size: 40px;
+                line-height: 50px;
+            }
+
+            .product-image {
+                width: 280px;
+                height: 280px;
+            }
+
+            .product-description {
+                max-width: 280px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <div class="header-container">
+        <header class="header">
+            <h1 class="logo">FRANK OCEAN</h1>
+            <nav class="nav-menu" role="navigation" aria-label="Main menu">
+                <a href="#home" class="nav-link">HOME</a>
+                <a href="#store" class="nav-link">STORE</a>
+                <a href="#videos" class="nav-link">VIDEOS</a>
+                <a href="#photo" class="nav-link">PHOTO</a>
+                <img src="../assets/images/img_exclude.svg" alt="Menu icon" class="nav-icon">
+            </nav>
+        </header>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" aria-label="Hero image">
+        <!-- Background image applied via CSS -->
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h2 class="main-heading">How we experience</h2>
+
+        <!-- Product Section -->
+        <section class="product-section">
+            <div class="product-navigation">
+                <img src="../assets/images/img_keyboardarrowup_gray_900.svg" alt="Previous product" class="nav-arrow" onclick="previousProduct()">
+                <img src="../assets/images/img_keyboardarrowup.svg" alt="Next product" class="nav-arrow" onclick="nextProduct()">
+            </div>
+            
+            <img src="../assets/images/img_image.png" alt="Product image" class="product-image">
+            <h3 class="product-title">Product</h3>
+            <p class="product-description">2 Record Gatefold Packaging<br>12" x 36" Lyrics foldout<br>12" x 24" Foldout poster</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="social-icons">
+                <img src="../assets/images/img_buttons_icon.svg" alt="Social media icon" class="social-icon" onclick="openSocialLink('facebook')">
+                <img src="../assets/images/img_buttons_icon_gray_600.svg" alt="Social media icon" class="social-icon" onclick="openSocialLink('twitter')">
+                <img src="../assets/images/img_buttons_icon_gray_600_40x40.svg" alt="Social media icon" class="social-icon" onclick="openSocialLink('youtube')">
+                <img src="../assets/images/img_buttons_icon_40x40.svg" alt="Social media icon" class="social-icon" onclick="openSocialLink('instagram')">
+            </div>
+            
+            <div class="footer-topics">
+                <div class="topic-column">
+                    <h4 class="topic-header">Topic</h4>
+                    <a href="#page1" class="topic-link">Page</a>
+                    <a href="#page2" class="topic-link">Page</a>
+                    <a href="#page3" class="topic-link">Page</a>
+                </div>
+                
+                <div class="topic-column">
+                    <h4 class="topic-header">Topic</h4>
+                    <a href="#page4" class="topic-link">Page</a>
+                    <a href="#page5" class="topic-link">Page</a>
+                    <a href="#page6" class="topic-link">Page</a>
+                </div>
+                
+                <div class="topic-column">
+                    <h4 class="topic-header">Topic</h4>
+                    <a href="#page7" class="topic-link">Page</a>
+                    <a href="#page8" class="topic-link">Page</a>
+                    <a href="#page9" class="topic-link">Page</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Product navigation functionality
+        let currentProduct = 0;
+        const products = [
+            {
+                image: '/images/img_image.png',
+                title: 'Product',
+                description: '2 Record Gatefold Packaging<br>12" x 36" Lyrics foldout<br>12" x 24" Foldout poster'
+            },
+            {
+                image: '/images/img_image.png',
+                title: 'Vinyl Collection',
+                description: 'Limited Edition Vinyl<br>180g Heavyweight Pressing<br>Includes Digital Download'
+            },
+            {
+                image: '/images/img_image.png',
+                title: 'Deluxe Edition',
+                description: 'Deluxe Box Set<br>Exclusive Art Prints<br>Behind the Scenes Content'
+            }
+        ];
+
+        function nextProduct() {
+            currentProduct = (currentProduct + 1) % products.length;
+            updateProduct();
+        }
+
+        function previousProduct() {
+            currentProduct = (currentProduct - 1 + products.length) % products.length;
+            updateProduct();
+        }
+
+        function updateProduct() {
+            const productImage = document.querySelector('.product-image');
+            const productTitle = document.querySelector('.product-title');
+            const productDescription = document.querySelector('.product-description');
+            
+            productImage.src = products[currentProduct].image;
+            productTitle.textContent = products[currentProduct].title;
+            productDescription.innerHTML = products[currentProduct].description;
+            
+            // Add fade effect
+            productImage.style.opacity = '0';
+            setTimeout(() => {
+                productImage.style.opacity = '1';
+            }, 150);
+        }
+
+        // Social media links functionality
+        function openSocialLink(platform) {
+            const socialLinks = {
+                facebook: 'https://facebook.com/frankocean',
+                twitter: 'https://twitter.com/frankocean',
+                youtube: 'https://youtube.com/frankocean',
+                instagram: 'https://instagram.com/frankocean'
+            };
+            
+            if (socialLinks[platform]) {
+                window.open(socialLinks[platform], '_blank');
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                } else {
+                    // Simulate navigation for demo purposes
+                    console.log(`Navigating to ${targetId} section`);
+                    alert(`Navigation to ${targetId.toUpperCase()} section`);
+                }
+            });
+        });
+
+        // Add loading animation for product image
+        document.querySelector('.product-image').addEventListener('load', function() {
+            this.style.transition = 'opacity 0.3s ease';
+        });
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') {
+                previousProduct();
+            } else if (e.key === 'ArrowRight') {
+                nextProduct();
+            }
+        });
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Frank Ocean portfolio page loaded');
+            
+            // Add focus states for accessibility
+            document.querySelectorAll('.nav-link, .topic-link, .social-icon, .nav-arrow').forEach(element => {
+                element.setAttribute('tabindex', '0');
+                
+                element.addEventListener('focus', function() {
+                    this.style.outline = '2px solid #9747ff';
+                    this.style.outlineOffset = '2px';
+                });
+                
+                element.addEventListener('blur', function() {
+                    this.style.outline = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
