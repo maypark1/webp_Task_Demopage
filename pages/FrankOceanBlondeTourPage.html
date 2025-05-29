@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frank Ocean - Blonde Tour</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+            background-color: #141414;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .header {
+            position: relative;
+            width: 100%;
+            height: 164px;
+            background-color: #141414;
+            padding: 0;
+        }
+
+        .brand-title {
+            position: absolute;
+            left: 57px;
+            top: 46px;
+            font-size: 64px;
+            font-weight: 700;
+            line-height: 78px;
+            color: #ffffff;
+            width: 452px;
+            height: 88px;
+        }
+
+        .nav-menu {
+            position: absolute;
+            right: 0;
+            top: 67px;
+            display: flex;
+            gap: 48px;
+            padding-right: 57px;
+        }
+
+        .nav-link {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 25px;
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #cccccc;
+        }
+
+        /* Main Content */
+        .main-content {
+            position: relative;
+            width: 100%;
+            min-height: calc(100vh - 164px);
+            background-color: #141414;
+        }
+
+        /* Tour Section */
+        .tour-section {
+            text-align: center;
+            padding: 106px 0;
+        }
+
+        .tour-title {
+            font-size: 32px;
+            font-weight: 600;
+            line-height: 39px;
+            color: #ffffff;
+            margin-bottom: 100px;
+        }
+
+        .tour-description {
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 30px;
+            color: #ffffff;
+            max-width: 842px;
+            margin: 0 auto;
+            white-space: pre-line;
+        }
+
+        /* Photo Gallery */
+        .photo-gallery {
+            position: relative;
+            padding: 100px 0;
+        }
+
+        .photo-item {
+            position: absolute;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+
+        .photo-item.photo1 {
+            left: 81px;
+            top: 814px;
+        }
+
+        .photo-item.photo2 {
+            right: 81px;
+            top: 1369px;
+            flex-direction: row-reverse;
+        }
+
+        .photo-content {
+            flex: 1;
+            max-width: 515px;
+        }
+
+        .photo-title {
+            font-size: 40px;
+            font-weight: 600;
+            line-height: 49px;
+            color: #ffffff;
+            margin-bottom: 22px;
+        }
+
+        .photo-subtitle {
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 36px;
+            color: #828282;
+        }
+
+        .photo-image {
+            width: 400px;
+            height: auto;
+            border-radius: 8px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .photo-image:hover {
+            transform: scale(1.05);
+        }
+
+        .photo1-img {
+            height: 624px;
+        }
+
+        .photo2-img {
+            height: 623px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .brand-title {
+                font-size: 48px;
+                width: 340px;
+            }
+
+            .nav-menu {
+                gap: 30px;
+            }
+
+            .photo-item {
+                position: static;
+                flex-direction: column;
+                align-items: center;
+                margin: 80px auto;
+                max-width: 800px;
+            }
+
+            .photo-item.photo2 {
+                flex-direction: column;
+            }
+
+            .tour-description {
+                padding: 0 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                height: auto;
+                padding: 20px;
+            }
+
+            .brand-title {
+                position: static;
+                font-size: 36px;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .nav-menu {
+                position: static;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 20px;
+                padding: 0;
+            }
+
+            .nav-link {
+                font-size: 18px;
+            }
+
+            .tour-section {
+                padding: 60px 20px;
+            }
+
+            .tour-title {
+                font-size: 28px;
+                margin-bottom: 40px;
+            }
+
+            .tour-description {
+                font-size: 18px;
+                padding: 0 20px;
+            }
+
+            .photo-content {
+                text-align: center;
+            }
+
+            .photo-title {
+                font-size: 32px;
+            }
+
+            .photo-subtitle {
+                font-size: 20px;
+            }
+
+            .photo-image {
+                width: 100%;
+                max-width: 400px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brand-title {
+                font-size: 28px;
+            }
+
+            .nav-link {
+                font-size: 16px;
+            }
+
+            .tour-title {
+                font-size: 24px;
+            }
+
+            .tour-description {
+                font-size: 16px;
+            }
+
+            .photo-title {
+                font-size: 28px;
+            }
+
+            .photo-subtitle {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1 class="brand-title">FRANK OCEAN</h1>
+        <nav class="nav-menu" role="navigation" aria-label="Main navigation">
+            <a href="#home" class="nav-link" tabindex="0">HOME</a>
+            <a href="#store" class="nav-link" tabindex="0">STORE</a>
+            <a href="#videos" class="nav-link" tabindex="0">VIDEOS</a>
+            <a href="#photo" class="nav-link" tabindex="0">PHOTO</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Tour Section -->
+        <section class="tour-section">
+            <h2 class="tour-title">Blonde Tour</h2>
+            <p class="tour-description">Excepteur efficient emerging, minim veniam anim cloying aute carefully curated gauche. Espresso exquisite perfect nostrud nisi intricate. Punctual adipisicing Borzoi, essential lovely tempor eiusmod irure. Exclusive izakaya charming Quezon City impeccable aute quality of life soft power pariatur occaecat discerning. Qui wardrobe aliquip, et Amadeus rock opera.
+
+Exquisite sophisticated iconic cutting-edge laborum deserunt esse bureaux cupidatat id minim. Sharp classic the best commodo nostrud delightful. Conversation aute wifey id. Qui sunt remarkable deserunt intricate airport excepteur classic esse riot girl.</p>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section class="photo-gallery">
+            <!-- Photo 1 -->
+            <div class="photo-item photo1">
+                <div class="photo-content">
+                    <h3 class="photo-title">photo1</h3>
+                    <p class="photo-subtitle">A subheading for this section, as long or as short as you like</p>
+                </div>
+                <img src="../assets/images/img_image_400x623.png" alt="Artistic photo featuring pears" class="photo-image photo1-img">
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="photo-item photo2">
+                <div class="photo-content">
+                    <h3 class="photo-title">photo2</h3>
+                    <p class="photo-subtitle">A subheading for this section, as long or as short as you like</p>
+                </div>
+                <img src="../assets/images/img_image.png" alt="Artistic photo featuring watermelon slices" class="photo-image photo2-img">
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Navigation functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Simulate navigation
+                    const target = this.getAttribute('href').substring(1);
+                    console.log(`Navigating to: ${target}`);
+                    
+                    // Smooth scroll to section if it exists
+                    const targetSection = document.getElementById(target);
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+                
+                // Hover effects
+                link.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                link.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Photo gallery interactions
+            const photoImages = document.querySelectorAll('.photo-image');
+            
+            photoImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    // Create modal overlay
+                    const modal = document.createElement('div');
+                    modal.style.cssText = `
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.9);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 1000;
+                        cursor: pointer;
+                    `;
+                    
+                    const modalImg = document.createElement('img');
+                    modalImg.src = this.src;
+                    modalImg.alt = this.alt;
+                    modalImg.style.cssText = `
+                        max-width: 90%;
+                        max-height: 90%;
+                        border-radius: 8px;
+                        object-fit: contain;
+                    `;
+                    
+                    modal.appendChild(modalImg);
+                    document.body.appendChild(modal);
+                    
+                    // Close modal on click
+                    modal.addEventListener('click', function() {
+                        document.body.removeChild(modal);
+                    });
+                    
+                    // Close modal on escape key
+                    document.addEventListener('keydown', function(e) {
+                        if (e.key === 'Escape') {
+                            if (document.body.contains(modal)) {
+                                document.body.removeChild(modal);
+                            }
+                        }
+                    });
+                });
+            });
+            
+            // Scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe photo items for scroll animations
+            const photoItems = document.querySelectorAll('.photo-item');
+            photoItems.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(50px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(item);
+            });
+            
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    // Ensure focus is visible
+                    document.body.classList.add('keyboard-navigation');
+                }
+            });
+            
+            document.addEventListener('mousedown', function() {
+                document.body.classList.remove('keyboard-navigation');
+            });
+        });
+        
+        // Add CSS for keyboard navigation
+        const style = document.createElement('style');
+        style.textContent = `
+            .keyboard-navigation .nav-link:focus {
+                outline: 2px solid #ffffff;
+                outline-offset: 2px;
+            }
+            
+            .nav-link.active {
+                color: #cccccc;
+                text-decoration: underline;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
